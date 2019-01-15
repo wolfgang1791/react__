@@ -5,7 +5,7 @@ import Location from './Location';
 
 const WheatherLocation = () =>  (
     <div>
-        <Location/> 
+        <Location city={'Privet Drive'}/> 
         <WheatherData/>
     </div>
 );
