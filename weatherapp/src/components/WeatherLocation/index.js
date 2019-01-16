@@ -1,5 +1,5 @@
 import React from 'react';
-import WheatherData from './WheatherData';
+import WheatherData from './WeatherData';
 import Location from './Location';
 
 

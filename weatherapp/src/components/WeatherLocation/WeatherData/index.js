@@ -1,7 +1,7 @@
 import React from 'react';
 import WheatherExtraInfo from './WheatherExtraInfo';
 import WheatherTemperature from './WheatherTemperature';
-import {WINDY,SNOW,RAIN,SUN,CLOUDY,CLOUD} from './../constants/weathers';
+import {WINDY,SNOW,RAIN,SUN,CLOUDY,CLOUD} from '../../../constants/weathers';
 
 const WheatherData = () => (
     <div>

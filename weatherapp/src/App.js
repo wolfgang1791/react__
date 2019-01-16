@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WheatherLocation from './components/WheatherLocation';
+import WheatherLocation from './components/WeatherLocation/index';
 import './App.css';
 
 class App extends Component {
