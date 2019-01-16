@@ -5,7 +5,7 @@ import WheatherTemperature from './WheatherTemperature';
 
 const WheatherData = () => (
     <div>
-        <WheatherTemperature/>
+        <WheatherTemperature temperature={20}/>
         <WheatherExtraInfo humidity={'80'} winds={'10m/s'}/>
     </div>
 )
