@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherIcons from 'react-weathericons';
+
 
 const WheatherExtraInfo = ({humidity,winds}) =>(
     <div>
