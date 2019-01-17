@@ -33,7 +33,7 @@ const stateToIconName = weatherstate =>{
 }
 
 const getWeatherIcon = weatherstate => { // un parametro xx()
-        return(<WeatherIcons name={stateToIconName(weatherstate)} size="2x"/>)
+        return(<WeatherIcons clasname="wicon" name={stateToIconName(weatherstate)} size="4x"/>)
 }
 
 
@@ -41,7 +41,8 @@ const WheatherTemperature = (props)=>{//{temperature,weatherstate}
       //  const weatherstate = props.weatherstate;
         return(<div className="weatherDataTemperatureCont">
             {getWeatherIcon(props.weatherstate)}
-            <span>{`${props.temperature} °C`}</span>
+            <span className="temperature">{`${props.temperature}`}</span>
+            <span className="temperaturetype">°C</span>
         </div>)
 };
 
