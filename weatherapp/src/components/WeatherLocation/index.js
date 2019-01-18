@@ -3,10 +3,11 @@ import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
 import {SUN} from '../../constants/weathers';
+import transformWeather from './../../services/transformWeather'
 
 const location ='London,uk';
 const api_id = '6064a8a97abf12ed9ad3b85a40d38db3';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_id}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_id}`;//&units=metric
  
 
 const data1 ={
@@ -40,33 +41,11 @@ class WheatherLocation extends Component{
         };
         
         */
-
-       getWeatherState = weather => {
-            return SUN;
-       }
-
-        getData = weather_data => {
-
-            const {humidity,temp}= weather_data.main; 
-            const {speed} = weather_data.wind;
-            const weatherstate = this.getWeatherState(this.weather);
-
-            const data = {
-                humidity,
-                temperature : temp,
-                winds:`${speed}m/s`,
-                weatherstate,
-            }
-
-            return data;
-        }
-
         handleUpdateClick = ()=>{
             fetch(url).then(response => {               //busca datos en el servidor
-                console.log(response);
                 return response.json();                //cascada ->|>
             }).then(weather_data => {
-                const data = this.getData(weather_data);
+                const data = transformWeather(weather_data);
                 this.setState({data});
                 this.setState({city:weather_data.name})
             });                           
