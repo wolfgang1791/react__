@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
@@ -12,11 +12,14 @@ const data ={
     winds:'10 m/s',
 }
 
-const WheatherLocation = () =>  (
-    <div className="weatherLocationCont">
-        <Location city={'Privet Drive'}/> 
-        <WheatherData data={data}/>
-    </div>
-);
-
+class WheatherLocation extends Component{
+       
+    
+        render = () =>  (
+            <div className="weatherLocationCont">
+                <Location city={'Privet Drive'}/> 
+                <WheatherData data={data}/>
+            </div>
+        );
+}
 export default WheatherLocation;
