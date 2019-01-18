@@ -26,7 +26,7 @@ const data2 ={
 
 class WheatherLocation extends Component{
        
-        constructor(){
+        constructor(){console.log("construct");
             super();
             this.state = {
                 city: 'Privet Drive',
@@ -41,13 +41,32 @@ class WheatherLocation extends Component{
         };
         
         */
+
+        
+        componentWillMount() { //una sola vez despues del construct
+            console.log("cwm")
+            this.handleUpdateClick();
+        }
+        
+        componentDidMount() {//una sola vez despues del render
+            console.log("cdm")
+        }
+
+        componentWillUpdate() {//una sola vez despues de un refresh
+            console.log("cwu")
+        }
+        
+        componentDidUpdate() {//una sola vez despues del render en el refresh
+            console.log("cdu")
+        }
+        
+        
         handleUpdateClick = ()=>{
             fetch(url).then(response => {               //busca datos en el servidor
                 return response.json();                //cascada ->|>
             }).then(weather_data => {
                 const data = transformWeather(weather_data);
-                this.setState({data});
-                this.setState({city:weather_data.name})
+                this.setState({data,city:weather_data.name});
             });                           
             /*console.log("Con esa mirada tan hiriente");
             
@@ -65,7 +84,7 @@ class WheatherLocation extends Component{
                 });
             }*/
         }
-        render = () =>  {
+        render = () =>  {  console.log("render");
             const {city,data} = this.state;
             return(
                 <div className="weatherLocationCont">

@@ -6,24 +6,24 @@ const getWeatherState = weather => {
 }
 
 const getTemperature = kelvin => {
-return convert(kelvin).from('K').to('C').toFixed(1);
+    return Number(convert(kelvin).from('K').to('C').toFixed(1));
 }
 
 const transformWeather = weather_data => {
 
-const {humidity,temp}= weather_data.main; 
-const {speed} = weather_data.wind;
-const weatherstate = getWeatherState('');
-const temperature = getTemperature(temp);
-console.log(typeof temperature);
-const data = {
-    humidity,
-    temperature,
-    winds:`${speed}m/s`,
-    weatherstate,
-}
+    const {humidity,temp}= weather_data.main; 
+    const {speed} = weather_data.wind;
+    const weatherstate = getWeatherState('');
+    const temperature = getTemperature(temp);
 
-return data;
+    const data = {
+        humidity,
+        temperature,
+        winds:`${speed}m/s`,
+        weatherstate,
+    }
+
+    return data;
 }
 
 export default transformWeather;
