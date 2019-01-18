@@ -2,20 +2,12 @@ import React,{Component} from 'react'; // parte todo
 import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
-import {SUN} from '../../constants/weathers';
 import transformWeather from './../../services/transformWeather'
 
 const location ='London,uk';
 const api_id = '6064a8a97abf12ed9ad3b85a40d38db3';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_id}`;//&units=metric
  
-
-const data1 ={
-    temperature:80,
-    weatherstate:SUN,
-    humidity:50,
-    winds:'10 m/s',
-}
 /*
 const data2 ={
     temperature:15,
@@ -30,7 +22,7 @@ class WheatherLocation extends Component{
             super();
             this.state = {
                 city: 'Privet Drive',
-                data: data1,
+                data: null,
             };
         }
         /* O
@@ -89,8 +81,8 @@ class WheatherLocation extends Component{
             return(
                 <div className="weatherLocationCont">
                     <Location city={city}/> 
-                    <WheatherData data={data}/>
-                    <button className="btn" onClick={this.handleUpdateClick}>Actualizar</button>
+                    {data ? <WheatherData data={data}/> : 'Cargando...'}
+                    {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button>*/}
                 </div>
             )
         };
