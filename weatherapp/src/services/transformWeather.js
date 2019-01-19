@@ -17,7 +17,7 @@ const getWeatherState = weather => {
     else if(id<700){
         return SNOW;
     }
-    else if(id>=800){
+    else if(id===800){
         return SUN;
     }
     else{

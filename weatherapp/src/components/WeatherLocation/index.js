@@ -76,7 +76,7 @@ class WheatherLocation extends Component{
         render = () =>  { // console.log("render");
             const {city,data} = this.state;
             return(
-                <div className="weatherLocationCont">
+                <div className="weatherLocationCont" >
                     <Location city={city}/> 
                     {data ? <WheatherData data={data}/> : <CircularProgress size={60} thickness={7}/>}
                     {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button> <Preloader size="big"/>*/}
