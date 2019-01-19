@@ -1,5 +1,6 @@
 import React,{Component} from 'react'; // parte todo
-import {Preloader} from 'react-materialize';
+//import {Preloader} from 'react-materialize';
+import CircularProgress from 'material-ui/CircularProgress';
 import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
@@ -82,8 +83,8 @@ class WheatherLocation extends Component{
             return(
                 <div className="weatherLocationCont">
                     <Location city={city}/> 
-                    {data ? <WheatherData data={data}/> : <Preloader size="big"/>}
-                    {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button>*/}
+                    {data ? <WheatherData data={data}/> : <CircularProgress size="60" thickness={7}/>}
+                    {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button> <Preloader size="big"/>*/}
                 </div>
             )
         };
