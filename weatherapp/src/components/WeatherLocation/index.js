@@ -1,4 +1,5 @@
 import React,{Component} from 'react'; // parte todo
+import {Preloader} from 'react-materialize';
 import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
@@ -81,7 +82,7 @@ class WheatherLocation extends Component{
             return(
                 <div className="weatherLocationCont">
                     <Location city={city}/> 
-                    {data ? <WheatherData data={data}/> : 'Cargando...'}
+                    {data ? <WheatherData data={data}/> : <Preloader size="big"/>}
                     {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button>*/}
                 </div>
             )
