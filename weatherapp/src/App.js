@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import {Grid,Row,Col} from 'react-flexbox-grid';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from 'material-ui/Paper';
+import Appbar from 'material-ui/AppBar';
 import LocationList from './components/LocationList';
 import './App.css';
 
@@ -14,9 +17,25 @@ class App extends Component {
    //   console.log("debug");
       return (
           <MuiThemeProvider>
-              <div className="App">
-                <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
-              </div>
+            <Grid>
+                <Row>
+                  <Col xs={12}>
+                    <Appbar title="Weather App"/>
+                   </Col> 
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <Paper zDepth={4}>
+                            <div className="detail">
+
+                            </div>
+                        </Paper>
+                    </Col>
+                </Row>
+            </Grid>
           </MuiThemeProvider>
       );
 
