@@ -1,29 +1,22 @@
 import React,{Component} from 'react'; // parte todo
 //import {Preloader} from 'react-materialize';
+import PropTypes from 'prop-types';
 import CircularProgress from 'material-ui/CircularProgress';
 import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
 import transformWeather from './../../services/transformWeather'
 
-const location ='London,uk';
 const api_id = '6064a8a97abf12ed9ad3b85a40d38db3';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_id}`;//&units=metric
+const url = `https://api.openweathermap.org/data/2.5/weather?q=`;
+//&units=metric
  
-/*
-const data2 ={
-    temperature:15,
-    weatherstate:WINDY,
-    humidity:12,
-    winds:'0.5 m/s',
-}*/
-
 class WheatherLocation extends Component{
        
-        constructor(){//console.log("construct");
+        constructor({city}){//console.log("construct");
             super();
             this.state = {
-                city: 'Privet Drive',
+                city,//'Privet Drive',
                 data: null,
             };
         }
@@ -56,7 +49,9 @@ class WheatherLocation extends Component{
         
         
         handleUpdateClick = ()=>{
-            fetch(url).then(response => {               //busca datos en el servidor
+            const {city} = this.state; 
+            const api_weather = `${url}${city}&appid=${api_id}`;
+            fetch(api_weather).then(response => {               //busca datos en el servidor
                 return response.json();                //cascada ->|>
             }).then(weather_data => {
                 const data = transformWeather(weather_data);
@@ -88,5 +83,9 @@ class WheatherLocation extends Component{
                 </div>
             )
         };
+}
+
+WheatherLocation.propTypes = {
+    city : PropTypes.string,
 }
 export default WheatherLocation;
