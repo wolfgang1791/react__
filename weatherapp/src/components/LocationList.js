@@ -3,7 +3,7 @@ import WheatherLocation from './WeatherLocation';
 import PropTypes from 'prop-types';
 
 const stringToComponent = cities => (
-    cities.map(city =>( <WheatherLocation city={city}></WheatherLocation>  ))
+    cities.map((city) =>( <WheatherLocation key={city} city={city}></WheatherLocation>  ))
 );
 
 const LocationList = ({cities}) => (
