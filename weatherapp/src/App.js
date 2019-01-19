@@ -5,13 +5,13 @@ import './App.css';
 
 class App extends Component {
   render() {
-    
+   //   console.log("debug");
       return (
-        <MuiThemeProvider>
-          <div className="App">
-            <WheatherLocation></WheatherLocation>
-          </div>
-        </MuiThemeProvider>
+          <MuiThemeProvider>
+              <div className="App">
+                <WheatherLocation></WheatherLocation>
+              </div>
+          </MuiThemeProvider>
       );
 
   }

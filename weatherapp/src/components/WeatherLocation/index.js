@@ -20,7 +20,7 @@ const data2 ={
 
 class WheatherLocation extends Component{
        
-        constructor(){console.log("construct");
+        constructor(){//console.log("construct");
             super();
             this.state = {
                 city: 'Privet Drive',
@@ -38,20 +38,20 @@ class WheatherLocation extends Component{
 
         
         componentWillMount() { //una sola vez despues del construct
-            console.log("cwm")
+            //console.log("cwm")
             this.handleUpdateClick();
         }
         
         componentDidMount() {//una sola vez despues del render
-            console.log("cdm")
+           // console.log("cdm")
         }
 
         componentWillUpdate() {//una sola vez despues de un refresh
-            console.log("cwu")
+           // console.log("cwu")
         }
         
         componentDidUpdate() {//una sola vez despues del render en el refresh
-            console.log("cdu")
+          //  console.log("cdu")
         }
         
         
@@ -78,12 +78,12 @@ class WheatherLocation extends Component{
                 });
             }*/
         }
-        render = () =>  {  console.log("render");
+        render = () =>  { // console.log("render");
             const {city,data} = this.state;
             return(
                 <div className="weatherLocationCont">
                     <Location city={city}/> 
-                    {data ? <WheatherData data={data}/> : <CircularProgress size="60" thickness={7}/>}
+                    {data ? <WheatherData data={data}/> : <CircularProgress size={60} thickness={7}/>}
                     {/*<button className="btn" onClick={this.handleUpdateClick}>Actualizar</button> <Preloader size="big"/>*/}
                 </div>
             )
