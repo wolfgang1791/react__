@@ -4,7 +4,7 @@ import convert from 'convert-units';
 const getWeatherState = weather => {
     
     const {id} = weather[0];
-    console.log(id);
+    //console.log(id);
     if(id < 300){
         return THUNDER;
     }

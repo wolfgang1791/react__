@@ -15,7 +15,7 @@ class WheatherLocation extends Component{
        
         constructor({city}){//console.log("construct");
             super();
-            this.state = {
+            this.state = {  // = solo en constructor
                 city,//'Privet Drive',
                 data: null,
             };
