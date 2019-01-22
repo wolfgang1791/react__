@@ -12,6 +12,11 @@ const cities = ['London,uk','Lima,pe','Madrid,es','Moscu,rus','Guildford,uk','Gl
 
 const store = createStore(() =>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
+const setCiy = value => {
+    const action = { type:'setCiy',value};
+    return action;
+}
+
 class App extends Component {
 
     constructor(){
@@ -25,9 +30,9 @@ class App extends Component {
       this.setState({
         city
       });
-      console.log(`handleSelectionLocation ${city}`);
-      const action = { type:'setCiy',value:city};
-      store.dispatch(action);
+     // console.log(`handleSelectionLocation ${city}`);
+     
+      store.dispatch(setCiy(city));
   }  
 
   render() {
