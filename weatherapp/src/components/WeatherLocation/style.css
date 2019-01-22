@@ -7,7 +7,8 @@
     box-sizing: border-box;
     font-family: 'Roboto','sans-serif';
     box-shadow: 10px 10px 42px -12px rgba(0,0,0,0.75);/*cssmatic*/
-    background: rgba(0, 200, 0, 0.1)
+    background: rgba(0, 200, 0, 0.1);
+    cursor:pointer;
 }
 
 .LocationCont{
@@ -23,6 +24,7 @@
     margin-top:0px;
     margin-bottom: 0px;
 }
+
 .btn{
     margin:15px;
 }
