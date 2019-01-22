@@ -56,7 +56,7 @@ class WheatherLocation extends Component{
                 return response.json();                //cascada ->|>
             }).then(weather_data => {
                 const data = transformWeather(weather_data);
-                this.setState({data,city:weather_data.name});
+                this.setState({data,city});
             });                           
             /*console.log("Con esa mirada tan hiriente");
             
