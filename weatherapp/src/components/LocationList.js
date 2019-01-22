@@ -1,7 +1,7 @@
 import React from 'react';
 import WheatherLocation from './WeatherLocation';
 import PropTypes from 'prop-types';
-import'./styles.css';
+import './styles.css';
 
 
 const LocationList = ({cities,onSelectedLocation}) => {
