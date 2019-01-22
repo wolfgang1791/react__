@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {createStore} from 'redux';
 import {Grid,Row,Col} from 'react-flexbox-grid';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
@@ -8,6 +9,9 @@ import ForecastExtended from './components/ForecastExtended';
 import './App.css';
 
 const cities = ['London,uk','Lima,pe','Madrid,es','Moscu,rus','Guildford,uk','Glasgow,uk'];
+
+const store = createStore(() =>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 class App extends Component {
 
     constructor(){
@@ -22,6 +26,8 @@ class App extends Component {
         city
       });
       console.log(`handleSelectionLocation ${city}`);
+      const action = { type:'setCiy',value:city};
+      store.dispatch(action);
   }  
 
   render() {
