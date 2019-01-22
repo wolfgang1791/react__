@@ -1,17 +1,9 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import ForecastItem from './ForecastItem';
+//import ForecastItem from './ForecastItem';
 import {api_id,url_forecast} from '../constants/api';
+import {transformForecast} from '../services/transformForecast';
 import './styles.css';
-/*
-const days = ['Lunes','Martes','Miercoles','Jueves','Viernes'];
-
-const data = {
-    temperature: 10,
-    humidity: 10,
-    weatherstate:'normal',
-    winds:'normal'
-}*/
 
 class ForecastExtended extends Component{ 
 
@@ -23,7 +15,17 @@ class ForecastExtended extends Component{
     }
 
     componentDidMount=()=>{
-
+        const api = `${url_forecast}${this.props.city}&appid=${api_id}`;
+        
+        fetch(api).then(data =>{
+            return data.json();
+        }).then(weather_data =>{
+            console.log(weather_data);
+            const forecastData = transformForecast(weather_data);
+            this.setState({
+                forecastdata : forecastData
+            });
+        })
     }
 
     renderForecastItemDays = () => {
