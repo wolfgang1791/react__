@@ -4,11 +4,19 @@ import ForecastItem from './ForecastItem';
 import './styles.css';
 
 const days = ['Lunes','Martes','Miercoles','Jueves','Viernes'];
+
+const data = {
+    temperature: 10,
+    humidity: 10,
+    weatherstate:'normal',
+    winds:'normal'
+}
+
 class ForecastExtended extends Component{ 
 
     renderForecastItemDays = () => {
         return days.map(day => (
-            <ForecastItem key={day} weekDay={day}></ForecastItem>
+            <ForecastItem key={day} weekDay={day} hour={10} data={data}></ForecastItem>
         ));
     }
 
