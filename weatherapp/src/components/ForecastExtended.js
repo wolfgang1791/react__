@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
+import {api_id,url_forecast} from '../constants/api';
 import './styles.css';
 /*
 const days = ['Lunes','Martes','Miercoles','Jueves','Viernes'];
@@ -19,6 +20,10 @@ class ForecastExtended extends Component{
         this.state = {
             forecastdata : null,
         }
+    }
+
+    componentDidMount=()=>{
+
     }
 
     renderForecastItemDays = () => {

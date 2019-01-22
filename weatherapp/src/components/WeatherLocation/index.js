@@ -6,9 +6,10 @@ import WheatherData from './WeatherData';
 import Location from './Location';
 import './style.css'
 import transformWeather from './../../services/transformWeather'
-
+import {api_id,url} from './../../constants/api';
+/*
 const api_id = '6064a8a97abf12ed9ad3b85a40d38db3';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=`;*/
 //&units=metric
  
 class WheatherLocation extends Component{
