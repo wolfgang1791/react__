@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {createStore} from 'redux';
 import {Grid,Row,Col} from 'react-flexbox-grid';
+import {setCity} from './actions/';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import Appbar from 'material-ui/AppBar';
@@ -11,11 +12,6 @@ import './App.css';
 const cities = ['London,uk','Lima,pe','Madrid,es','Moscu,rus','Guildford,uk','Glasgow,uk'];
 
 const store = createStore(() =>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-const setCiy = value => {
-    const action = { type:'setCiy',value};
-    return action;
-}
 
 class App extends Component {
 
@@ -32,7 +28,7 @@ class App extends Component {
       });
      // console.log(`handleSelectionLocation ${city}`);
      
-      store.dispatch(setCiy(city));
+      store.dispatch(setCity(city));
   }  
 
   render() {
