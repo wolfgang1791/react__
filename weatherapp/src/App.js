@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {Grid,Row,Col} from 'react-flexbox-grid';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import Appbar from 'material-ui/AppBar';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import {setCity} from './actions/';
-//import {store} from './store'
 import './App.css';
 
 const cities = ['London,uk','Lima,pe','Madrid,es','Moscu,rus','Guildford,uk','Glasgow,uk'];
@@ -27,7 +27,7 @@ class App extends Component {
         city
       });
      // console.log(`handleSelectionLocation ${city}`);
-      this.props.setCity(city);
+      this.props.dispatchsetCity(city);
   }  
 
   render() {
@@ -61,13 +61,18 @@ class App extends Component {
 }
 
 
+App.propTypes = {
+    setCity : PropTypes.func.isRequired,
+}
 
-const mapDispatchToPropsActions = (dispatch) => {
+
+const mapDispatchToProps = (dispatch) => {
     return {
-        setCity: value => dispatch(setCity(value))
+        dispatchsetCity: value => dispatch(setCity(value))
     }
 }
 
-const AppConnected = connect(null,mapDispatchToPropsActions)(App);
+export default connect(null,mapDispatchToProps)(App);
+//const AppConnected = connect(null,mapDispatchToProps)(App);
 
-export default AppConnected;
+//export default AppConnected;
