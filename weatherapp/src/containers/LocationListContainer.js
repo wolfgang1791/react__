@@ -30,3 +30,6 @@ const mapDispatchToProps = (dispatch) => {
 
 
 export default connect(null,mapDispatchToProps)(LocationListContainer);
+/* mapstatetoprops: connect las inyecta(values) al componente como props (this.props)
+   mapDispatchToProps: retorna un objeto con FUNCIONES que connect inyecta como props 
+*/
