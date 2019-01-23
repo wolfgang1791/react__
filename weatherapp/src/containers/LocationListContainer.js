@@ -18,7 +18,7 @@ class LocationListContainer extends Component {
 }
 
 LocationListContainer.propTypes = {
-    setCity : PropTypes.func.isRequired,
+    dispatchsetCity : PropTypes.func.isRequired,
     cities: PropTypes.array.isRequired,
 };
 
